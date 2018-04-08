@@ -25,7 +25,7 @@ gulp.task('push-version', push_description, ['bump-version'], function (cb) {
     importance = "patch";
   }
   message = "Increments " + importance + " version";
-  return exec('git add package.json && git commit -m "' + message + '" && git push origin --no-verify');
+  return exec('git add -A && git commit -m "' + message + '" && git push origin --no-verify');
 });
 
 

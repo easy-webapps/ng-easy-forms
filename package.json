@@ -1,6 +1,6 @@
 {
   "name": "ng-easy-forms",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "license": "MIT",
   "author": {
     "name": "Thompson Filgueiras",
@@ -26,6 +26,11 @@
     "ngc-build": "ngc -p ./tsconfig.lib.json",
     "prepare": "npm run cleardown && npm run inline-build-templates && npm run ngc-build && gulp push-version"
   },
+  "files": [
+    "lib"
+  ],
+  "main": "./lib/ng-easy-forms.module.js",
+  "typings": "./lib/ng-easy-forms.module.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/tigredonorte/ng-easy-forms.git"
