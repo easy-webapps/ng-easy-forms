@@ -1,5 +1,6 @@
-import { TranslationObject } from '../reusable/base-field.component';
+import { BaseOptions, TranslationObject } from '../reusable/base-field.component';
 
+export type PhoneType = 'Cellphone' | 'Phone';
 export interface PhoneTranslationObject extends TranslationObject {
   InvalidPhone: string;
   InvalidCelphone: string;
@@ -7,19 +8,23 @@ export interface PhoneTranslationObject extends TranslationObject {
 
 export const phoneTranslations: PhoneTranslationObject = {
   InvalidPhone: 'follow this format (99) 9999-9999',
-  InvalidCelphone: 'follow this format (99) 9999-99999',
+  InvalidCelphone: 'follow this format (99) 9999-99999'
 };
 
-export const PhoneMasks = {
+export interface PhoneOptions extends BaseOptions {
+  PhoneType: PhoneType;
+}
+
+export const phoneDefaultOptions: PhoneOptions = {
+  PhoneType: 'Cellphone'
+};
+
+export const PhoneMasks: BaseOptions = {
   Phone: ['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
-  Cellphone: ['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/]
+  Cellphone: ['(', /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/],
 };
 
-export const PhoneLenght = {
+export const PhoneLenght: BaseOptions = {
   Phone: 10,
   Cellphone: 11
 };
-
-export const Cellphone = 'Cellphone';
-export const Phone = 'Phone';
-export type PhoneType = 'Cellphone' | 'Phone';

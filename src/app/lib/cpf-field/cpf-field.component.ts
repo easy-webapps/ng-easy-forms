@@ -1,7 +1,7 @@
 import { Component, forwardRef } from '@angular/core';
 import { FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidatorFn } from '@angular/forms';
 
-import { BaseFieldComponet } from '../reusable/base-field.component';
+import { BaseFieldComponet, BaseOptions } from '../reusable/base-field.component';
 import { CpfTranslationObject, cpfTranslations, invalidCpfArray } from './cpf-field.model';
 
 @Component({
@@ -84,5 +84,9 @@ export class CpfFieldComponent extends BaseFieldComponet {
 
   getTranslations(): CpfTranslationObject {
     return cpfTranslations;
+  }
+
+  getOptions(): BaseOptions {
+    return {};
   }
 }

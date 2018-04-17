@@ -1,8 +1,15 @@
-import { Component, forwardRef, SimpleChanges, OnChanges, OnInit } from '@angular/core';
+import { Component, forwardRef, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidatorFn } from '@angular/forms';
 
-import { BaseFieldComponet, TranslationObject } from '../reusable/base-field.component';
-import { Cellphone, PhoneLenght, PhoneType, PhoneMasks, PhoneTranslationObject, phoneTranslations } from './phone-field.model';
+import { BaseFieldComponet } from '../reusable/base-field.component';
+import {
+  phoneDefaultOptions,
+  PhoneLenght,
+  PhoneMasks,
+  PhoneOptions,
+  PhoneTranslationObject,
+  phoneTranslations
+} from './phone-field.model';
 
 @Component({
   selector: 'app-phone-field',
@@ -14,16 +21,16 @@ import { Cellphone, PhoneLenght, PhoneType, PhoneMasks, PhoneTranslationObject, 
   ]
 })
 export class PhoneFieldComponent extends BaseFieldComponet implements OnChanges, OnInit {
-  mask = PhoneMasks[Cellphone];
-  private lenght = PhoneLenght[Cellphone];
+  mask: any[] = PhoneMasks.Cellphone;
+  private lenght: number = PhoneLenght.Cellphone;
   constructor() {
     super();
   }
 
   ngOnInit() {
     super.ngOnInit();
-    this.mask = this.options && this.options.phoneType ? PhoneMasks[this.options.phoneType] : PhoneMasks[Cellphone];
-    this.lenght = this.options && this.options.phoneType ? PhoneLenght[this.options.phoneType] : PhoneLenght[Cellphone];
+    this.mask = PhoneMasks[this.options.phoneType];
+    this.lenght = PhoneLenght[this.options.phoneType];
   }
 
   ngOnChanges(data: SimpleChanges) {
@@ -49,5 +56,9 @@ export class PhoneFieldComponent extends BaseFieldComponet implements OnChanges,
 
   getTranslations(): PhoneTranslationObject {
     return phoneTranslations;
+  }
+
+  getOptions(): PhoneOptions {
+    return phoneDefaultOptions;
   }
 }

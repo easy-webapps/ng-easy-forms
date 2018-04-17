@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-title>Radio Group String array</mat-card-title>
+  <mat-card-content>
+    <app-radio-group-field [(ngModel)]="model" [radioOptions]="options"></app-radio-group-field>
+    <div class='result' *ngIf="model">
+      {{model}}
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Radio Group Object Array</mat-card-title>
+  <mat-card-content>
+    <app-radio-group-field [(ngModel)]="model2" [radioOptions]="options2"></app-radio-group-field>
+    <div class='result' *ngIf="model2">
+      {{model2 | json}}
+    </div>
+  </mat-card-content>
+</mat-card>

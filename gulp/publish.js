@@ -18,6 +18,6 @@ gulp.task('inline-build-templates', push_description, ['clean'], () => {
 var clean_description = 'clean build and lib folders';
 gulp.task('clean', clean_description, () => {
   return del([
-    'build', 'lib'
+    'build/**/*.*', 'lib/**/*.*'
   ]);
 });

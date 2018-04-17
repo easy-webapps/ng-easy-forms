@@ -1,7 +1,7 @@
 import { Component, forwardRef } from '@angular/core';
 import { FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidatorFn, Validators } from '@angular/forms';
 
-import { BaseFieldComponet } from '../reusable/base-field.component';
+import { BaseFieldComponet, BaseOptions } from '../reusable/base-field.component';
 import { EmailTranslationObject, emailTranslations } from './email-field.model';
 
 @Component({
@@ -35,5 +35,9 @@ export class EmailFieldComponent extends BaseFieldComponet {
 
   getTranslations(): EmailTranslationObject {
     return emailTranslations;
+  }
+
+  getOptions(): BaseOptions {
+    return {};
   }
 }

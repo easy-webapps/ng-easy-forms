@@ -6,11 +6,15 @@ import { isEmpty } from 'ramda';
 export interface TranslationObject {
   [s: string]: string;
 }
+
+export interface BaseOptions {
+  [s: string]: any;
+}
 export abstract class BaseFieldComponet implements OnInit, OnChanges, OnDestroy {
   private fieldSubscription: Subscription = null;
   @Input() placeholder = '';
   @Input() required = false;
-  @Input() options: any = {};
+  @Input() options: BaseOptions = {};
   @Input() translations: TranslationObject = {};
   error = '';
   field = new FormControl('');
@@ -37,6 +41,9 @@ export abstract class BaseFieldComponet implements OnInit, OnChanges, OnDestroy 
   ngOnInit() {
     if (isEmpty(this.translations)) {
       this.translations = this.getTranslations();
+    }
+    if (isEmpty(this.options) && !!this.getOptions) {
+      this.options = this.getOptions();
     }
     this.updateValidators();
     this.validateFn = this.getValidateFn();
@@ -70,6 +77,7 @@ export abstract class BaseFieldComponet implements OnInit, OnChanges, OnDestroy 
   abstract getValidators(): ValidatorFn | ValidatorFn[];
   abstract getErrorMessage(): string;
   abstract getTranslations(): TranslationObject;
+  abstract getOptions(): BaseOptions;
 
   // mandatory for reactive components
   touchedChange: any = () => {};

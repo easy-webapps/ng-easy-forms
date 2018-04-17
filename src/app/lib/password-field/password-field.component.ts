@@ -2,7 +2,7 @@ import { Component, forwardRef, Input, OnChanges, OnInit, SimpleChanges } from '
 import { FormControl, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidatorFn, Validators } from '@angular/forms';
 import { keys } from 'ramda';
 
-import { BaseFieldComponet } from '../reusable/base-field.component';
+import { BaseFieldComponet, BaseOptions } from '../reusable/base-field.component';
 import {
   passwordConfig,
   PasswordConfigInterface,
@@ -73,5 +73,9 @@ export class PasswordFieldComponent extends BaseFieldComponet implements OnInit,
 
   getTranslations(): PasswordTranslationObject {
     return passwordTranslations;
+  }
+
+  getOptions(): BaseOptions {
+    return {};
   }
 }

@@ -1,0 +1,5 @@
+<mat-radio-group>
+  <mat-radio-button *ngFor="let o of radioOptions" (change)="radioChange(o)" [value]="o.value ? o.value : o">
+    {{(o.title ? o.title : o)}}
+  </mat-radio-button>
+</mat-radio-group>

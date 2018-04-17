@@ -1,0 +1,9 @@
+<mat-card>
+  <mat-card-title>Autocomplete Field</mat-card-title>
+  <mat-card-content>
+    <app-autocomplete-field [translations]="translations" [(ngModel)]="model"></app-autocomplete-field>
+    <div class='result' *ngIf="model">
+      {{model}}
+    </div>
+  </mat-card-content>
+</mat-card>
