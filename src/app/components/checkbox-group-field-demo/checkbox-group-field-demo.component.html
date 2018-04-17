@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-title>Checkbox Group String array</mat-card-title>
+  <mat-card-content>
+    <app-checkbox-group-field [(ngModel)]="model" [checkboxOptions]="options"></app-checkbox-group-field>
+    <div class='result' *ngIf="model">
+      {{model | json}}
+    </div>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-title>Checkbox Group Object Array</mat-card-title>
+  <mat-card-content>
+    <app-checkbox-group-field [(ngModel)]="model2" [checkboxOptions]="options2"></app-checkbox-group-field>
+    <div class='result' *ngIf="model2">
+      {{model2 | json}}
+    </div>
+  </mat-card-content>
+</mat-card>

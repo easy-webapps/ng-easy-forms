@@ -1,0 +1,3 @@
+<mat-checkbox *ngFor="let o of checkboxOptions" [checked]="checked[o['value'] ? o['value'] : o]" (change)="checkboxChange(o)" [value]="o['value'] ? o['value'] : o">
+  {{(o['title'] ? o['title'] : o)}}
+</mat-checkbox>

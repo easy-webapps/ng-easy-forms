@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AutocompleteFieldModule } from './autocomplete-field/autocomplete-field.module';
 import { CepFieldModule } from './cep-field/cep-field.module';
+import { CheckboxGroupFieldModule } from './checkbox-group-field/checkbox-group-field.module';
 import { CpfFieldModule } from './cpf-field/cpf-field.module';
 import { EmailFieldModule } from './email-field/email-field.module';
 import { PasswordFieldModule } from './password-field/password-field.module';
@@ -16,6 +17,7 @@ import { ToggleFieldModule } from './toggle-field/toggle-field.module';
     CommonModule,
     AutocompleteFieldModule,
     CepFieldModule,
+    CheckboxGroupFieldModule,
     CpfFieldModule,
     EmailFieldModule,
     PasswordFieldModule,
@@ -28,6 +30,7 @@ import { ToggleFieldModule } from './toggle-field/toggle-field.module';
   exports: [
     AutocompleteFieldModule,
     CepFieldModule,
+    CheckboxGroupFieldModule,
     CpfFieldModule,
     EmailFieldModule,
     PasswordFieldModule,

@@ -32,6 +32,10 @@ export abstract class BaseFieldComponet implements OnInit, OnChanges, OnDestroy 
         this._value = val;
         this.propagateChange(this._value);
       }
+
+      if (this.field.value !== val) {
+        this.field.setValue(val);
+      }
     } catch (e) {
       console.warn(e);
     }
