@@ -14,6 +14,7 @@ import { RadioGroupDataObject } from './radio-group-field.model';
   ]
 })
 export class RadioGroupFieldComponent extends BaseFieldComponet {
+  protected usingReactiveForms = false;
   @Input() radioOptions: RadioGroupDataObject[] = [];
   constructor() {
     super();

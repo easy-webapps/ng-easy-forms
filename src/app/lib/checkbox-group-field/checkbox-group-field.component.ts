@@ -14,6 +14,7 @@ import { CheckboxGroupType, CheckedObject } from './checkbox-group-field.model';
   ]
 })
 export class CheckboxGroupFieldComponent extends BaseFieldComponet implements OnInit, OnChanges {
+  protected usingReactiveForms = false;
   private selecteds: CheckboxGroupType[] = [];
   checked: CheckedObject = {};
   @Input() checkboxOptions: CheckboxGroupType[] = [];

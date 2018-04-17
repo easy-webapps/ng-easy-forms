@@ -11,6 +11,7 @@ export interface BaseOptions {
   [s: string]: any;
 }
 export abstract class BaseFieldComponet implements OnInit, OnChanges, OnDestroy {
+  protected usingReactiveForms = true;
   private fieldSubscription: Subscription = null;
   @Input() placeholder = '';
   @Input() required = false;
@@ -33,7 +34,7 @@ export abstract class BaseFieldComponet implements OnInit, OnChanges, OnDestroy 
         this.propagateChange(this._value);
       }
 
-      if (this.field.value !== val) {
+      if (!this.usingReactiveForms && this.field.value !== val) {
         this.field.setValue(val);
       }
     } catch (e) {
