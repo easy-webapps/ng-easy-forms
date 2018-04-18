@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-title>Import</mat-card-title>
+  <mat-card-content>
+    <pre><code>
+      {{"
+  import { "}}{{module}}{{" } from 'ng-easy-forms/lib/"}}{{_moduleName}}{{"';
+  @NgModule({
+    imports: ["}}{{module}}{{"],
+  })
+  class MyComponentModule {}"
+      }}
+    </code></pre>
+  </mat-card-content>
+</mat-card>

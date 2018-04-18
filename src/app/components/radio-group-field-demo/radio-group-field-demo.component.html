@@ -10,9 +10,10 @@
 <mat-card>
   <mat-card-title>Radio Group Object Array</mat-card-title>
   <mat-card-content>
-    <app-radio-group-field [(ngModel)]="model2" [radioOptions]="options2"></app-radio-group-field>
+    <app-radio-group-field  [formControl]="model2"[radioOptions]="options2"></app-radio-group-field>
     <div class='result' *ngIf="model2">
-      {{model2 | json}}
+      {{model2.value | json}}
     </div>
   </mat-card-content>
 </mat-card>
+<app-print-import moduleName='radio-group-field'></app-print-import>

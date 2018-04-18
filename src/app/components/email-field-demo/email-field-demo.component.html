@@ -1,36 +1,29 @@
-<mat-card>
-  <mat-card-title>Email Field ngModel</mat-card-title>
-  <mat-card-content>
+<app-demo-wrapper fieldName='email'>
+  <div form>
+    There's no available parameters
+  </div>
+
+  <div NgModel>
     <app-email-field [placeholder]="placeholder" [(ngModel)]="model"></app-email-field>
     <div class='result' *ngIf="model">
       {{model}}
     </div>
     <pre><code> {{example1}}</code></pre>
-  </mat-card-content>
+  </div>
 
-</mat-card>
-<mat-card>
-  <mat-card-title>Email Field reactiveForms</mat-card-title>
-  <mat-card-content>
+  <div ReactiveModule>
     <app-email-field [placeholder]="placeholder" [formControl]="control"></app-email-field>
     <div class='result' *ngIf="control.value">
       {{control.value}}
     </div>
     <pre><code> {{example2}}</code></pre>
-  </mat-card-content>
-</mat-card>
+  </div>
 
-<mat-card>
-  <mat-card-title>Import</mat-card-title>
-  <mat-card-content>
-    <pre><code>
-      {{"
-  import { EmailFieldModule } from 'ng-easy-forms/email-field';
-  @NgModule({
-    imports: [EmailFieldModule],
-  })
-  class MyComponentModule {}"
-      }}
-    </code></pre>
-  </mat-card-content>
-</mat-card>
+  <div InOut>
+    <app-email-field [placeholder]="placeholder" [inputValue]="myInput" (valueChanged)="myOutput=$event"></app-email-field>
+    <div class='result' *ngIf="myOutput">
+      {{myOutput}}
+    </div>
+    <pre><code> {{example3}}</code></pre>
+  </div>
+</app-demo-wrapper>

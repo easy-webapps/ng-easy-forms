@@ -14,7 +14,8 @@ export class DemoAppComponent implements OnInit {
   constructor(private _element: ElementRef, private _overlayContainer: OverlayContainer) {}
 
   ngOnInit() {
-    this.navItems = DemoRoutes.map(data => ({name: this.toTitleCase(data.path.replace(/-g/, ' ')), route: '/' + data.path}));
+    this.navItems = DemoRoutes.map((data) => ({ name: this.toTitleCase(data.path.replace(/-/g, ' ')), route: '/' + data.path }));
+    this.navItems.unshift({ name: 'Home', route: '/' });
   }
 
   private toTitleCase(str) {
@@ -55,9 +56,12 @@ export class DemoAppComponent implements OnInit {
  */
 @Component({
   selector: 'app-home',
-  template: `
-    <p>Welcome to the development demos for Angular Easy forms!</p>
-    <p>Open the sidenav to select a demo.</p>
-  `
+  templateUrl: './demo-app.home.html'
 })
-export class HomeComponent {}
+export class HomeComponent {
+  demos = {
+    ngModel: '<app-email-field [placeholder]="placeholder" [(model)]="myModel"></app-email-field>',
+    formControl: '<app-email-field [placeholder]="placeholder" [formControl]="control"></app-email-field>',
+    output: '<app-email-field [placeholder]="placeholder" [inputValue]="myInput" valueChanged="myVar=$event"></app-email-field>'
+  };
+}

@@ -1,0 +1,38 @@
+<div fxLayout="row">
+  <mat-card fxFlex="25%">
+    <mat-card-title>{{_fieldName}} Field Parameters</mat-card-title>
+    <mat-card-content>
+      <ng-content select="[form]"></ng-content>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card fxFlex="75%">
+    <mat-card-title>{{_fieldName}} Field</mat-card-title>
+    <mat-card-content>
+      <mat-tab-group>
+        <mat-tab label="NgModel">
+          <h2>ngModel Example</h2>
+          <ng-content select="[NgModel]"></ng-content>
+          <div class='code-example'>
+            <pre><code>{{ngModelExample}}</code></pre>
+          </div>
+        </mat-tab>
+        <mat-tab label="ReactiveModule">
+          <h2>Reactive Module Example</h2>
+          <ng-content select="[ReactiveModule]"></ng-content>
+          <div class='code-example'>
+            <pre><code>{{ReactiveModuleExample}}</code></pre>
+          </div>
+        </mat-tab>
+        <mat-tab label="InOut">
+          <h2>Input/Output Example</h2>
+          <ng-content select="[InOutModule]"></ng-content>
+          <div class='code-example'>
+            <pre><code>{{InOutExample}}</code></pre>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>
+<app-print-import [moduleName]='fieldName'></app-print-import>

@@ -1,39 +1,35 @@
-<mat-grid-list cols="4">
+<div fxLayout="row">
 
-  <mat-grid-tile colspan="1">
+  <mat-card fxFlex="33%">
+    <mat-card-content>
+      <mat-form-field>
+        <mat-select placeholder="Status" [(ngModel)]="status">
+          <mat-option *ngFor="let item of statusList" [value]="item.value">
+            {{ item.title }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class='form-field'>
+        <input matInput type='text' placeholder="save title" [(ngModel)]="translations.default" required>
+      </mat-form-field>
+      <mat-form-field class='form-field'>
+        <input matInput type='text' placeholder="error title" [(ngModel)]="translations.error" required>
+      </mat-form-field>
+      <mat-form-field class='form-field'>
+        <input matInput type='text' placeholder="saved title" [(ngModel)]="translations.saved" required>
+      </mat-form-field>
+      <mat-form-field class='form-field'>
+        <input matInput type='text' placeholder="saving title" [(ngModel)]="translations.saving" required>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
 
-    <mat-card>
-      <mat-card-content>
-        <mat-form-field>
-          <mat-select placeholder="Status" [(ngModel)]="status">
-            <mat-option *ngFor="let item of statusList" [value]="item.value">
-              {{ item.title }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-        <mat-form-field class='form-field'>
-          <input matInput type='text' placeholder="save title" [(ngModel)]="translations.default" required>
-        </mat-form-field>
-        <mat-form-field class='form-field'>
-          <input matInput type='text' placeholder="error title" [(ngModel)]="translations.error" required>
-        </mat-form-field>
-        <mat-form-field class='form-field'>
-          <input matInput type='text' placeholder="saved title" [(ngModel)]="translations.saved" required>
-        </mat-form-field>
-        <mat-form-field class='form-field'>
-          <input matInput type='text' placeholder="saving title" [(ngModel)]="translations.saving" required>
-        </mat-form-field>
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
+  <mat-card fxFlex="66%">
+    <mat-card-title>Save Button Demo</mat-card-title>
+    <mat-card-content>
+      <app-save-button [status]="status" [translations]="translations" (clicked)="onClick($event)"></app-save-button>
+    </mat-card-content>
+  </mat-card>
+</div>
 
-  <mat-grid-tile colspan="3">
-    <mat-card>
-      <mat-card-title>Save Button Demo</mat-card-title>
-      <mat-card-content>
-        <app-save-button [status]="status" [translations]="translations" (clicked)="onClick($event)"></app-save-button>
-      </mat-card-content>
-    </mat-card>
-  </mat-grid-tile>
-
-</mat-grid-list>
+<app-print-import fxFlex="100%" moduleName='save-button'></app-print-import>

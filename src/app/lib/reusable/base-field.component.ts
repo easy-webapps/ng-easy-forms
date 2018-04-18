@@ -1,4 +1,4 @@
-import { Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { EventEmitter, Input, Output, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { FormControl, ValidatorFn } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { isEmpty } from 'ramda';
@@ -17,6 +17,10 @@ export abstract class BaseFieldComponet implements OnInit, OnChanges, OnDestroy 
   @Input() required = false;
   @Input() options: BaseOptions = {};
   @Input() translations: TranslationObject = {};
+
+  // use inputValue and valueChanged if you ignoring reactive modules
+  @Input() inputValue = '';
+  @Output() valueChanged = new EventEmitter();
   error = '';
   field = new FormControl('');
   _value = '';
@@ -32,6 +36,7 @@ export abstract class BaseFieldComponet implements OnInit, OnChanges, OnDestroy 
       if (this._value !== val) {
         this._value = val;
         this.propagateChange(this._value);
+        this.valueChanged.emit(this._value);
       }
 
       if (!this.usingReactiveForms && this.field.value !== val) {

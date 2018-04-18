@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -15,14 +16,17 @@ import { AutocompleteFieldDemoComponent } from './autocomplete-field-demo/autoco
 import { CepFieldDemoComponent } from './cep-field-demo/cep-field-demo.component';
 import { CheckboxGroupFieldDemoComponent } from './checkbox-group-field-demo/checkbox-group-field-demo.component';
 import { CpfFieldDemoComponent } from './cpf-field-demo/cpf-field-demo.component';
+import { PrintImportComponent } from './helpers/print-import/print-import.component';
 import { PhoneFieldDemoComponent } from './phone-field-demo/phone-field-demo.component';
 import { RadioGroupFieldDemoComponent } from './radio-group-field-demo/radio-group-field-demo.component';
 import { SaveButtonDemoComponent } from './save-button-demo/save-button-demo.component';
+import { DemoWrapperComponent } from './helpers/demo-wrapper/demo-wrapper.component';
 
 @NgModule({
   imports: [
     CommonModule,
     NgEasyFormsModule,
+    FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,
@@ -41,7 +45,9 @@ import { SaveButtonDemoComponent } from './save-button-demo/save-button-demo.com
     PhoneFieldDemoComponent,
     AutocompleteFieldDemoComponent,
     RadioGroupFieldDemoComponent,
-    CheckboxGroupFieldDemoComponent
+    CheckboxGroupFieldDemoComponent,
+    PrintImportComponent,
+    DemoWrapperComponent
   ]
 })
 export class DemoEasyFormsModule {}
