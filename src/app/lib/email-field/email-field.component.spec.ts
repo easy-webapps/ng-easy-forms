@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { EmailFieldComponent } from './email-field.component';
+import { EmailFieldModule } from './email-field.module';
 
 describe('EmailFieldComponent', () => {
   let component: EmailFieldComponent;
@@ -8,7 +10,7 @@ describe('EmailFieldComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmailFieldComponent ]
+      imports: [ EmailFieldModule, NoopAnimationsModule ]
     })
     .compileComponents();
   }));

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CheckboxGroupFieldComponent } from './checkbox-group-field.component';
+import { CheckboxGroupFieldModule } from './checkbox-group-field.module';
 
 describe('CheckboxGroupFieldComponent', () => {
   let component: CheckboxGroupFieldComponent;
@@ -8,7 +10,7 @@ describe('CheckboxGroupFieldComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CheckboxGroupFieldComponent ]
+      imports: [ CheckboxGroupFieldModule, NoopAnimationsModule]
     })
     .compileComponents();
   }));

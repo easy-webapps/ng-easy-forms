@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToggleFieldComponent } from './toggle-field.component';
+import { ToggleFieldModule } from './toggle-field.module';
 
 describe('ToggleFieldComponent', () => {
   let component: ToggleFieldComponent;
@@ -8,7 +10,7 @@ describe('ToggleFieldComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToggleFieldComponent ]
+      imports: [ ToggleFieldModule, NoopAnimationsModule ]
     })
     .compileComponents();
   }));

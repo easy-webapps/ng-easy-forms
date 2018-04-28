@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { AutocompleteFieldModule } from './autocomplete-field/autocomplete-field.module';
 import { CepFieldModule } from './cep-field/cep-field.module';
 import { CheckboxGroupFieldModule } from './checkbox-group-field/checkbox-group-field.module';
 import { CpfFieldModule } from './cpf-field/cpf-field.module';
@@ -15,7 +14,6 @@ import { ToggleFieldModule } from './toggle-field/toggle-field.module';
 @NgModule({
   imports: [
     CommonModule,
-    AutocompleteFieldModule,
     CepFieldModule,
     CheckboxGroupFieldModule,
     CpfFieldModule,
@@ -28,7 +26,6 @@ import { ToggleFieldModule } from './toggle-field/toggle-field.module';
   ],
   declarations: [],
   exports: [
-    AutocompleteFieldModule,
     CepFieldModule,
     CheckboxGroupFieldModule,
     CpfFieldModule,

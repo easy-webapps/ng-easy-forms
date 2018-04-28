@@ -29,15 +29,15 @@ export class PhoneFieldComponent extends BaseFieldComponet implements OnChanges,
 
   ngOnInit() {
     super.ngOnInit();
-    this.mask = PhoneMasks[this.options.phoneType];
-    this.lenght = PhoneLenght[this.options.phoneType];
+    this.mask = PhoneMasks[this.options.PhoneType];
+    this.lenght = PhoneLenght[this.options.PhoneType];
   }
 
   ngOnChanges(data: SimpleChanges) {
     super.ngOnChanges(data);
     if (data['options']) {
-      this.mask = PhoneMasks[this.options.phoneType];
-      this.lenght = PhoneLenght[this.options.phoneType];
+      this.mask = PhoneMasks[this.options.PhoneType];
+      this.lenght = PhoneLenght[this.options.PhoneType];
     }
   }
 

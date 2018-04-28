@@ -1,0 +1,36 @@
+language: node_js
+node_js:
+- node
+- '6'
+sudo: required
+addons:
+  chrome: stable
+env:
+- NG_VERSION=5 TS_VERSION=2.5.3 MAT_VERSION=5
+before_install:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+install:
+- npm install -g @angular/cli
+- npm install -g gulp
+- npm install @angular/common@${NG_VERSION} @angular/core@${NG_VERSION} @angular/forms@${NG_VERSION}
+- npm install @angular/http@${NG_VERSION} @angular/platform-browser@${NG_VERSION}
+  @angular/platform-browser-dynamic@${NG_VERSION}
+- npm install @angular/compiler@${NG_VERSION} @angular/compiler-cli@${NG_VERSION}
+- npm install @angular/animations@${NG_VERSION} @angular/cdk@${MAT_VERSION} @angular/material@${MAT_VERSION}
+- npm install typescript@${TS_VERSION}
+- npm install
+script:
+- npm run build
+- npm run test:once
+before_deploy:
+  - cd lib
+deploy:
+  skip_cleanup: true
+  provider: npm
+  email: tigredonorte3@gmail.com
+  api_key:
+    secure: MtTw8I+DPnBoSUz1fAYQrUqgyqDjv3+PmHmvucgAJO/Q4PWv9SrWvSjckf74sMC3zVsaG3ZBcQe9XQayeYwio8RLl81QlhgGv9rvp6F1341JYuZhgNQFbv6pUH0gTMndPRtAtl40Jdgkoe88roitIPuXpTctjMbd6cAKf7Q9LfQSgFteTx8cN6pkoj78AE3gQ+5KxiZWZlT4x62Y7fXmHzhiio4zUC0fq8dKPSr9agTBZ7QbeLBR/Oe5o5QKxYDUMgypxqamTsPeK2rxr/6IzgYjECCGvea9j4O8kd7ZLyKMxW+Gn9L7ctngYQQ/yd2ftYtQa2Lm2FWH8kufCibSocqfjxHHNikXiLdbhJa4OTZl3BKwuKc/GPJlC4Jf5uSCB1ZhZdtevcQG5/h3E44m6MYiNXknHZ8FDCL4e0bSAJnRCwVZVR3OmHfcBrwjC9emjR6R/ZruzXF11JS07IO/S3j1aMyA4Q0vO90KdfgPhK2DM1eZ2d5SgFiWgH3E3kUfAymE6Z0kRlk8iHmCvfJfzBEla56dWWuwgDRqeKIFR115ExccZxZAE6o27Dzi0NCNurRnFK5A0XkbaRWgj4XS2hBGTI0bYxQEIHepPB9HW/4xc+u2ASbavjYYLuur+VOVoxHr6aBxbV3f3WMmr8YJQyvhp8xCm/iLSeuO9REZanQ=
+  on:
+    repo: easy-webapps/ng-easy-forms
+    branch: master

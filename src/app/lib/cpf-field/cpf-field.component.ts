@@ -24,14 +24,19 @@ export class CpfFieldComponent extends BaseFieldComponet {
   }
 
   getValidateFn(): ValidatorFn {
+    const invalid = { InvalidCPF: this.translations.invalidCpf };
     return (c: FormControl) => {
-      if (!c.value) {
+      if (!c || !c.value) {
         return null;
       }
-      if (this.isCpfValid(c.value.match(/\d+/g).join(''))) {
+      const match = c.value.toString().match(/\d+/g);
+      if (!match) {
+        return invalid;
+      }
+      if (this.isCpfValid(match.join(''))) {
         return null;
       }
-      return { InvalidCPF: this.translations.invalidCpf };
+      return invalid;
     };
   }
 

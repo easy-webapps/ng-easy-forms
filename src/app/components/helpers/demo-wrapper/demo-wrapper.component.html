@@ -13,23 +13,20 @@
         <mat-tab label="NgModel">
           <h2>ngModel Example</h2>
           <ng-content select="[NgModel]"></ng-content>
-          <div class='code-example'>
-            <pre><code>{{ngModelExample}}</code></pre>
-          </div>
+          <pre><code id='NgModel' title='click to copy' (click)='copyToClipboard("NgModel")'>{{ngModelExample}}</code></pre>
+          {{copyText}}
         </mat-tab>
         <mat-tab label="ReactiveModule">
           <h2>Reactive Module Example</h2>
           <ng-content select="[ReactiveModule]"></ng-content>
-          <div class='code-example'>
-            <pre><code>{{ReactiveModuleExample}}</code></pre>
-          </div>
+          <pre><code id='Reactive' title='click to copy' (click)='copyToClipboard("Reactive")'>{{ReactiveModuleExample}}</code></pre>
+          {{copyText}}
         </mat-tab>
         <mat-tab label="InOut">
           <h2>Input/Output Example</h2>
           <ng-content select="[InOutModule]"></ng-content>
-          <div class='code-example'>
-            <pre><code>{{InOutExample}}</code></pre>
-          </div>
+          <pre><code id='InOut' title='click to copy' (click)='copyToClipboard("InOut")'>{{InOutExample}}</code></pre>
+          {{copyText}}
         </mat-tab>
       </mat-tab-group>
     </mat-card-content>

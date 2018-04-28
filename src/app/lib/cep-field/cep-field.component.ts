@@ -24,8 +24,17 @@ export class CepFieldComponent extends BaseFieldComponet {
   }
 
   getValidateFn(): ValidatorFn {
-    return (c: FormControl) =>
-      !c.value ? null : c.value.match(/\d+/g).join('').length !== 8 ? { InvalidCep: this.translations.InvalidCep } : null;
+    const invalidData = { InvalidCep: this.translations.InvalidCep };
+    return (c: FormControl) => {
+      if (!c || !c.value) {
+        return null;
+      }
+      const match = c.value.toString().match(/\d+/g);
+      if (!match) {
+        return invalidData;
+      }
+      return match.join('').length !== 8 ? invalidData : null;
+    };
   }
 
   getValidators(): ValidatorFn | ValidatorFn[] {

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PasswordFieldComponent } from './password-field.component';
+import { PasswordFieldModule } from './password-field.module';
 
 describe('PasswordFieldComponent', () => {
   let component: PasswordFieldComponent;
@@ -8,7 +10,7 @@ describe('PasswordFieldComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PasswordFieldComponent ]
+      imports: [ PasswordFieldModule, NoopAnimationsModule ]
     })
     .compileComponents();
   }));

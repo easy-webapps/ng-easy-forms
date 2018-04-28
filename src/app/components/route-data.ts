@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 
-import { AutocompleteFieldDemoComponent } from './autocomplete-field-demo/autocomplete-field-demo.component';
 import { CepFieldDemoComponent } from './cep-field-demo/cep-field-demo.component';
 import { CheckboxGroupFieldDemoComponent } from './checkbox-group-field-demo/checkbox-group-field-demo.component';
 import { CpfFieldDemoComponent } from './cpf-field-demo/cpf-field-demo.component';
@@ -11,7 +10,6 @@ import { SaveButtonDemoComponent } from './save-button-demo/save-button-demo.com
 import { ToggleFieldDemoComponent } from './toggle-field-demo/toggle-field-demo.component';
 import { RadioGroupFieldDemoComponent } from './radio-group-field-demo/radio-group-field-demo.component';
 export const DemoRoutes = [
-  { path: 'autocomplete-field', component: AutocompleteFieldDemoComponent },
   { path: 'cep-field', component: CepFieldDemoComponent },
   { path: 'checkbox-group-field', component: CheckboxGroupFieldDemoComponent },
   { path: 'cpf-field', component: CpfFieldDemoComponent },

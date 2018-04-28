@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RadioGroupFieldComponent } from './radio-group-field.component';
+import { RadioGroupFieldModule } from './radio-group-field.module';
 
 describe('RadioGroupFieldComponent', () => {
   let component: RadioGroupFieldComponent;
@@ -8,7 +10,7 @@ describe('RadioGroupFieldComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RadioGroupFieldComponent ]
+      imports: [ RadioGroupFieldModule, NoopAnimationsModule ]
     })
     .compileComponents();
   }));

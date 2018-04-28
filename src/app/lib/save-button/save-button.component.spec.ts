@@ -1,8 +1,9 @@
-import { ReflectiveInjector } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import { SaveButtonTitles } from './save-button.model';
 import { SaveButtonComponent } from './save-button.component';
+import { SaveButtonTitles } from './save-button.model';
+import { SaveButtonModule } from './save-button.module';
 
 describe('SaveButtonComponent', () => {
   let component: SaveButtonComponent;
@@ -11,7 +12,7 @@ describe('SaveButtonComponent', () => {
   beforeEach(
     async(() => {
       TestBed.configureTestingModule({
-        declarations: [SaveButtonComponent],
+        imports: [SaveButtonModule, NoopAnimationsModule],
       }).compileComponents();
     })
   );

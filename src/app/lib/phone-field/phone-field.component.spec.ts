@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PhoneFieldComponent } from './phone-field.component';
+import { PhoneFieldModule } from './phone-field.module';
 
 describe('PhoneFieldComponent', () => {
   let component: PhoneFieldComponent;
@@ -8,7 +10,7 @@ describe('PhoneFieldComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhoneFieldComponent ]
+      imports: [ PhoneFieldModule, NoopAnimationsModule ]
     })
     .compileComponents();
   }));
